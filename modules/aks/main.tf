@@ -9,20 +9,12 @@ resource "azurerm_kubernetes_cluster" "project-aks-cluster" {
   default_node_pool {
     name           = "akspool"
     node_count     = 3
-    vm_size        = "Standard_D2_v2"
+    vm_size        = "Standard_DS2_v2"
     vnet_subnet_id = azurerm_subnet.project-subnet-aks.id
   }
 
   identity {
     type = "SystemAssigned"
-  }
-
-  network_profile {
-    network_plugin    = "azure"
-    load_balancer_sku = "standard"
-    load_balancer_profile {
-      managed_outbound_ip_count = 1
-    }
   }
 
   oms_agent {
