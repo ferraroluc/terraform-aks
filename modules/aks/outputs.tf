@@ -1,5 +1,5 @@
-output "kube_config" {
-  value     = azurerm_kubernetes_cluster.project-aks-cluster.kube_config
+output "kube_admin_config" {
+  value     = azurerm_kubernetes_cluster.project-aks-cluster.kube_admin_config
   sensitive = true
 }
 

@@ -3,7 +3,7 @@ variable "email" {
   type        = string
 }
 
-variable "kubernetes_kube_config" {
+variable "kubernetes_kube_admin_config" {
   description = "Kubernetes config"
 }
 

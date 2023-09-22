@@ -5,6 +5,11 @@ resource "azurerm_kubernetes_cluster" "project-aks-cluster" {
   dns_prefix          = "project-${var.environment}-aks-cluster"
 
   kubernetes_version = "1.26.3"
+
+  azure_active_directory_role_based_access_control {
+    managed            = true
+    azure_rbac_enabled = true
+  }
   
   default_node_pool {
     name           = "akspool"
